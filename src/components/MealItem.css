@@ -5,19 +5,59 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   list-style: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-item div {
+  max-width: 70%;
 }
 
 .meal-item h3 {
   margin: 0 0 0.25rem 0;
 }
 
-.meal-item .description {
+.description {
   font-style: italic;
   color: #666;
 }
 
-.meal-item .price {
+.price {
   font-weight: bold;
   color: #2e7d32;
   margin-top: 0.5rem;
+}
+
+.meal-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meal-form input {
+  width: 3.5rem;
+  padding: 0.3rem;
+  font: inherit;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ff9800;
+  background-color: #fff8e1;
+  color: #e65100;
+}
+
+.meal-form button {
+  font: inherit;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.meal-form button:hover {
+  background-color: #e64a19;
 }
