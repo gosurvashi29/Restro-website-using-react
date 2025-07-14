@@ -1,35 +1,24 @@
 import React from 'react';
 import './Header.css';
 
-
-const Header = () => {
+const Header = ({ onShowCart }) => {
   return (
     <>
-     
       <div className="orange-bar"></div>
 
-     
       <header className="header">
         <div className="header-container">
           <div className="logo">ReactMeals</div>
 
-          {/* <nav className="nav-links">
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </nav> */}
-
-          <a href="#reservation" className="cta-button">
-            Your Cart
-          </a>
+          {/* Cart Button */}
+          <button className="cta-button" onClick={onShowCart}>
+            🛒 Your Cart
+          </button>
         </div>
       </header>
 
-    
       <div className="meals-image-container">
         <img src="/meals.jpg" alt="Delicious meals" className="meals-image" />
-
       </div>
     </>
   );
