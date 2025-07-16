@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useContext  } from 'react';
 import './MealItem.css';
-
+import CartContext from './CartContext';
 const MealItem = ({ name, description, price }) => {
   const [amount, setAmount] = useState(1);
+  const cartCtx = useContext(CartContext);
+
+ 
 
   const amountChangeHandler = (event) => {
     setAmount(event.target.value);
@@ -10,7 +13,12 @@ const MealItem = ({ name, description, price }) => {
 
   const addToCartHandler = (event) => {
     event.preventDefault();
-    // Logic will go here later
+    cartCtx.addItem({
+      
+      name: name,
+      price: price,
+      amount: amount
+    });
     console.log(`Selected: ${amount} x ${name}`);
   };
 

@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
-
+import CartContext from './CartContext';
 const Header = ({ onShowCart }) => {
+  const cartCtx = useContext(CartContext);
+
+  const cartItemsCount = cartCtx.items.reduce((total, item) => {
+    return total + item.amount;
+  }, 0);
   return (
     <>
       <div className="orange-bar"></div>
@@ -12,7 +17,7 @@ const Header = ({ onShowCart }) => {
 
           {/* Cart Button */}
           <button className="cta-button" onClick={onShowCart}>
-            🛒 Your Cart
+            🛒 Your Cart({cartItemsCount})
           </button>
         </div>
       </header>
